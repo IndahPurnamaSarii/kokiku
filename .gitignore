@@ -1,0 +1,11 @@
+# File-file yang berisi kunci rahasia
+.env
+serviceAccountKey.json
+config.js
+package-lock.json
+public\config.js
+
+# Folder dependensi (isinya ribuan file)
+node_modules
+# Local Netlify folder
+.netlify

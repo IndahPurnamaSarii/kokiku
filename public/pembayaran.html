@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selesaikan Pendaftaran - KokiKu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+<script type="text/javascript"
+        src="https://app.sandbox.midtrans.com/snap/snap.js"
+        data-client-key="Mid-client-iL6kjvffuWrcQTnp"></script>
+</head>
+<body class="bg-orange-50 min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md mx-auto bg-white rounded-2xl shadow-2xl p-8 text-center">
+        <a href="index.html" class="font-handwriting text-4xl font-bold text-primary-color drop-shadow-lg leading-none mb-6 text-center inline-block">KokiKu</a>
+        
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Satu Langkah Lagi!</h2>
+        <p class="text-gray-600 mb-4">Selesaikan pembayaran untuk menjadi Anggota Premium.</p>
+        
+        <div class="bg-orange-50 border border-orange-200 rounded-lg p-3 my-4">
+            Akun: <strong id="user-email" class="text-gray-800">...memuat...</strong>
+        </div>
+
+        <div id="loading-spinner" class="py-10">
+            <div class="w-12 h-12 border-4 border-dashed rounded-full animate-spin border-primary-color mx-auto"></div>
+            <p class="mt-3 text-gray-500">Memverifikasi status Anda...</p>
+        </div>
+
+        <button id="pay-button" class="hidden w-full bg-primary-color text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-colors shadow-lg">
+            Bayar Rp 25.000 Sekarang
+        </button>
+
+        <p class="text-xs text-gray-400 mt-6">
+            Dengan melanjutkan, Anda menyetujui Ketentuan Layanan kami.
+        </p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script type="module" src="payment.js"></script>
+</body>
+</html>

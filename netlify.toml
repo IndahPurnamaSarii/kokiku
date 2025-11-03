@@ -1,0 +1,10 @@
+# File: netlify.toml
+[build]
+  command = "# Tidak ada build command"
+  publish = "public"     # Folder frontend Anda
+  functions = "netlify/functions" # Folder backend Anda
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

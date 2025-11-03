@@ -1,0 +1,94 @@
+:root {
+    --bg-color: #FFFDE7; /* Creamy yellow, fresh */
+    --text-color: #4A3A3A; /* Dark brown for warmth */
+    --primary-color: #FF7043; /* Vibrant Orange */
+    --primary-hover: #E65100; /* Darker Orange */
+    --secondary-color: #FFC107; /* Amber Yellow */
+    --accent-color: #66BB6A; /* Fresh Green */
+    --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    background-color: var(--bg-color);
+    background-image: url('https://placehold.co/1920x1080/FFFDE7/E0E0E0?text=Subtle+Food+Pattern');
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--text-color);
+}
+
+.font-handwriting {
+    font-family: 'Satisfy', cursive;
+}
+
+.glass-panel {
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.search-bar-input {
+    border: none;
+}
+.search-bar-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 112, 67, 0.4);
+}
+
+.recipe-card, .suggestion-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFadeIn 0.5s ease-out forwards;
+}
+
+.recipe-card:hover, .suggestion-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+}
+
+.modal {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-content {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+}
+
+@keyframes slideUpFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Gaya Khusus untuk Halaman Menu --- */
+/* Dengan .menu-page, gaya ini hanya akan aktif di menu.html */
+body.menu-page {
+    background-color: #FFF7ED; /* Warna latar belakang lembut */
+}
+
+.menu-page .filter-btn {
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-page .filter-btn.active {
+    background-color: #E57373; /* bg-primary-color */
+    color: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* --- Kelas Utilitas --- */
+/* Kelas ini bisa dipakai di halaman mana saja */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

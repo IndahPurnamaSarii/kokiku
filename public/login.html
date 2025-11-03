@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - KokiKu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Satisfy&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Mendefinisikan font kustom yang Anda impor dari Google Fonts */
+        .font-handwriting {
+          font-family: 'Satisfy', cursive;
+        }
+
+        /* Mendefinisikan variabel warna utama */
+        :root {
+          --primary-color: #F97316; /* Ini adalah Tailwind 'orange-500' */
+        }
+
+        /* Menggunakan variabel di kelas Tailwind */
+        .text-primary-color {
+          color: var(--primary-color);
+        }
+
+        .bg-primary-color {
+          background-color: var(--primary-color);
+        }
+
+        .to-primary-color {
+          --tw-gradient-to: var(--primary-color);
+        }
+    </style>
+    </head>
+<body class="bg-orange-50 min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl flex overflow-hidden">
+        <div class="hidden md:flex w-1/2 bg-gradient-to-br from-orange-400 to-primary-color p-8 text-white flex-col justify-center">
+            <h2 class="font-handwriting text-5xl font-bold mb-4">Go Premium!</h2>
+            <p class="mb-6 opacity-90">Buka semua potensi memasak Anda dengan fitur premium dari KokiKu.</p>
+            <ul class="space-y-4">
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 mr-3 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span>Akses <strong>tanpa batas</strong> ke jutaan resep dari seluruh dunia.</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 mr-3 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <span>Gunakan <strong>kamera</strong> untuk mencari resep dari bahan yang Anda punya.</span>
+                </li>
+                 <li class="flex items-start">
+                    <svg class="w-6 h-6 mr-3 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v1h-1V6a1 1 0 00-1-1H7a1 1 0 00-1 1v12a1 1 0 001 1h10a1 1 0 001-1v-1h1v1a2 2 0 01-2 2H7a2 2 0 01-2-2V5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m6 0l-2-2m2 2l-2 2"></path></svg>
+                    <span>Simpan dan organisir resep favorit Anda di <strong>Buku Resep Digital</strong>.</span>
+                </li>
+            </ul>
+            <div class="mt-8 text-center">
+                <p class="font-bold text-lg">Hanya Rp 25.000/bulan</p>
+                <a href="#" class="mt-2 inline-block bg-white text-primary-color font-bold px-6 py-2 rounded-full hover:bg-orange-100 transition-colors">Langganan Sekarang</a>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
+             <a href="index.html" class="font-handwriting text-4xl font-bold text-primary-color drop-shadow-lg leading-none mb-6 text-center">KokiKu</a>
+            <div id="auth-form-container">
+                </div>
+        </div>
+    </div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script type="module" src="app.js"></script> 
+</body>
+</html>

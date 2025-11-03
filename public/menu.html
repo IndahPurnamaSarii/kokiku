@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semua Resep - KokiKu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen menu-page">
+
+    <div class="relative w-full max-w-screen-xl mx-auto p-4 md:p-8">
+        <main id="app" class="w-full max-w-6xl mx-auto">
+            <div class="flex justify-between items-center mb-6 pt-8">
+                <a href="index.html" class="font-handwriting text-5xl font-bold text-primary-color drop-shadow-lg leading-none">KokiKu</a>
+                <a href="index.html" class="flex items-center space-x-2 text-orange-500 font-semibold hover:text-orange-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    <span>Kembali</span>
+                </a>
+            </div>
+            
+            <div class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-xl p-6 md:p-8">
+                <div class="text-center">
+                    <h2 class="font-handwriting text-6xl font-bold text-primary-color">Jelajahi Semua Resep</h2>
+                    <p class="text-gray-500 mt-2 max-w-2xl mx-auto">Temukan inspirasi masakan baru setiap hari. Pilih kategori di bawah atau gulir untuk melihat semuanya!</p>
+                </div>
+
+                <div class="relative my-8">
+                    <div class="flex space-x-3 overflow-x-auto pb-4 no-scrollbar">
+                        <button class="filter-btn active flex-shrink-0 px-5 py-2 rounded-full font-semibold" data-category="semua">Semua</button>
+                        <button class="filter-btn flex-shrink-0 px-5 py-2 rounded-full font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200" data-category="Daging">Daging</button>
+                        <button class="filter-btn flex-shrink-0 px-5 py-2 rounded-full font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200" data-category="Ayam">Ayam</button>
+                        <button class="filter-btn flex-shrink-0 px-5 py-2 rounded-full font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200" data-category="Seafood">Seafood</button>
+                        <button class="filter-btn flex-shrink-0 px-5 py-2 rounded-full font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200" data-category="Vegetarian">Vegetarian</button>
+                        <button class="filter-btn flex-shrink-0 px-5 py-2 rounded-full font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200" data-category="Pasta">Pasta & Mie</button>
+                        <button class="filter-btn flex-shrink-0 px-5 py-2 rounded-full font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200" data-category="Sup">Sup & Soto</button>
+                        <button class="filter-btn flex-shrink-0 px-5 py-2 rounded-full font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200" data-category="Dessert">Kue & Dessert</button>
+                        <button class="filter-btn flex-shrink-0 px-5 py-2 rounded-full font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200" data-category="Minuman">Minuman</button>
+                    </div>
+                </div>
+
+                <div id="all-recipes-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="recipe-modal" class="modal fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 invisible z-50"></div>
+    <div id="premium-modal" class="modal fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 invisible z-50"></div>
+    
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script type="module" src="app.js"></script> 
+</body>
+</html>
