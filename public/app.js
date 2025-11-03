@@ -3,6 +3,7 @@
 
 // Impor HANYA firebaseConfig. Kunci rahasia sudah tidak ada.
 import { firebaseConfig } from './config.js';
+firebase.initializeApp(firebaseConfig);
 
 // === INISIALISASI FIREBASE ===
 if (firebase.apps.length === 0) {
