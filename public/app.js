@@ -16,7 +16,7 @@ const getRecipes = async (count = 20, tag = '') => {
     console.time(`API: /api/getRecipes(${count}, ${tag})`);
     try {
         // Memanggil backend Netlify kita, bukan Spoonacular
-        const response = await fetch(`/api/getRecipes?count=${count}&tag=${tag}`);
+        const response = await fetch(`/netlify/functions/getRecipes?count=${count}&tag=${tag}`);
         if (!response.ok) throw new Error(`Server error: ${response.status}`);
         const data = await response.json();
         console.timeEnd(`API: /api/getRecipes(${count}, ${tag})`);
@@ -51,7 +51,7 @@ const getRecipes = async (count = 20, tag = '') => {
 const findRecipesByQuery = async (query, count = 12) => {
     console.time(`API: /api/findRecipesByQuery('${query}', ${count})`);
     try {
-        const response = await fetch(`/api/findRecipesByQuery?query=${query}&count=${count}`);
+        const response = await fetch(`/netlify/functions/findRecipesByQuery?query=${query}&count=${count}`);
         if (!response.ok) throw new Error(`Server error: ${response.status}`);
         const data = await response.json();
         console.timeEnd(`API: /api/findRecipesByQuery('${query}', ${count})`);
@@ -72,7 +72,7 @@ const findRecipesByQuery = async (query, count = 12) => {
 const findRecipesByIngredient = async (ingredient, count = 12) => {
     console.time(`API: /api/findRecipesByIngredient('${ingredient}', ${count})`);
     try {
-        const response = await fetch(`/api/findRecipesByIngredient?ingredient=${ingredient}&count=${count}`);
+        const response = await fetch(`/netlify/functions/findRecipesByIngredient?ingredient=${ingredient}&count=${count}`);
         if (!response.ok) throw new Error(`Server error: ${response.status}`);
         const data = await response.json();
         console.timeEnd(`API: /api/findRecipesByIngredient('${ingredient}', ${count})`);
@@ -94,7 +94,7 @@ const getRecipeDetails = async (recipeId) => {
     console.time(`API: /api/getRecipeDetails(${recipeId})`);
     try {
         // Memanggil backend Netlify kita
-        const response = await fetch(`/api/getRecipeDetails?recipeId=${recipeId}`);
+        const response = await fetch(`/netlify/functions/getRecipeDetails?recipeId=${recipeId}`);
         if (!response.ok) throw new Error(`Server error: ${response.status}`);
         const data = await response.json();
         console.timeEnd(`API: /api/getRecipeDetails(${recipeId})`);
@@ -110,7 +110,7 @@ const getRecipeDetails = async (recipeId) => {
 const translateToEnglish = async (query) => {
     console.time(`API: /api/translate (to en)`);
     try {
-        const response = await fetch(`/api/translate`, {
+        const response = await fetch(`/netlify/functions/translate`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text: query, targetLang: 'en' })
@@ -132,7 +132,7 @@ const translateRecipeTitles = async (recipes) => {
 
     const titlesToTranslate = recipes.map(r => r.name).join('\n');
     try {
-        const response = await fetch(`/api/translate`, {
+        const response = await fetch(`/netlify/functions/translate`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text: titlesToTranslate, targetLang: 'id-list' })
@@ -156,7 +156,7 @@ const translateRecipeTitles = async (recipes) => {
 const translateToIndonesian = async (query) => {
     console.time(`API: /api/translate (to id)`);
     try {
-        const response = await fetch(`/api/translate`, {
+        const response = await fetch(`/netlify/functions/translate`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text: query, targetLang: 'id' })
@@ -175,7 +175,7 @@ const translateToIndonesian = async (query) => {
 const callGeminiVision = async (base64Image, mimeType = 'image/jpeg') => {
     console.time("API: /api/geminiVision");
     try {
-        const response = await fetch(`/api/geminiVision`, {
+        const response = await fetch(`/netlify/functions/geminiVision`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ base64Image, mimeType })
@@ -208,7 +208,7 @@ const callGeminiVision = async (base64Image, mimeType = 'image/jpeg') => {
 const getAIFriendlyRecipe = async (recipe, details) => {
     console.time(`API: /api/getAIFriendlyRecipe`);
     try {
-        const response = await fetch(`/api/getAIFriendlyRecipe`, {
+        const response = await fetch(`/netlify/functions/getAIFriendlyRecipe`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ recipe, details }) // Kirim data resep & detail
