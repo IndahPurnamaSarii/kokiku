@@ -1,15 +1,10 @@
-// File: config.js (atau public/config.js)
-
-// 1. Ambil config dari Firebase Console (Project Settings > General > Your apps)
-export const firebaseConfig = {
-  apiKey: "AIzaSy...KUNCI_PUBLIK_ANDA...",
-  authDomain: "papaya-marzipan-d111ed.firebaseapp.com",
-  projectId: "papaya-marzipan-d111ed",
-  storageBucket: "papaya-marzipan-d111ed.appspot.com",
-  messagingSenderId: "...",
-  appId: "..."
-  // (Pastikan Anda menggunakan kunci asli dari Firebase Anda)
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCpFqNrzyJErp78xDTjV3jDQVU7sa2sYX4",
+  authDomain: "kokiku-d3771.firebaseapp.com",
+  projectId: "kokiku-d3771",
+  storageBucket: "kokiku-d3771.firebasestorage.app",
+  messagingSenderId: "589143149567",
+  appId: "1:589143149567:web:c3c38e0568f8ef72a4f5ca",
+  measurementId: "G-S352BX60NJ"
 };
-
-// JANGAN panggil firebase.initializeApp(firebaseConfig) di sini.
-// File app.js Anda sudah melakukannya, jadi biarkan app.js yang mengurusnya.
