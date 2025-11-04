@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         :
-const response = await fetch('/.netlify/functions/createInvoice', {
+const response = await fetch('/.netlify/functions/createInvoice'), {
 // ...
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
