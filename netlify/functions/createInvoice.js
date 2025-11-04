@@ -25,7 +25,8 @@ exports.handler = async (event, context) => {
     }
 
     const baseUrl = event.headers['x-forwarded-proto'] + '://' + event.headers.host;
-    const successUrl = baseUrl + '/pembayaran-sukses.html';
+    
+    const successUrl = baseUrl + '/index.html';
     const failureUrl = baseUrl + '/pembayaran-gagal.html';
 
     const externalId = `KOKIKU-${uid.substring(0, 10)}-${Date.now()}`; 
