@@ -4,7 +4,8 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-pro" }); // Gunakan model stabil ini
+// KODE LAMA ANDA YANG SALAH:
+const response = await ai.models.generateContent({ model: 'gemini-pro', ... }); // Gunakan model stabil ini
 
 // --- FUNGSI HELPER BARU UNTUK PARSING ---
 function parseAIResponse(rawText, details) {
