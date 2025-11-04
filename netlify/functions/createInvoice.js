@@ -69,7 +69,7 @@ exports.handler = async (event, context) => {
         return {
             statusCode: 200,
             // Respons Xendit menggunakan snake_case, jadi ini tetap
-            body: JSON.stringify({ invoiceUrl: invoiceData.invoice_url }) 
+            body: JSON.stringify({ invoiceUrl: invoiceData.invoiceUrl }) 
         };
 
     } catch (error) {
