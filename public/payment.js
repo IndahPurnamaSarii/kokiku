@@ -58,7 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
             throw new Error("Email pengguna hilang. Silakan Login ulang.");
         }
         
-        const response = await fetch('/api/createInvoice', {
+        :
+const response = await fetch('/.netlify/functions/createInvoice', {
 // ...
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
